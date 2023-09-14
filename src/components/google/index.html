@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+</head>
+<body>
+    <svg id="svg_id" width="443" height="546" viewBox="0 0 443 546" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="443" height="546" fill="black"/>
+        <path d="M221.5 463L113 401V267V130L54 164H79V421.5L221.5 503.5L366 422V163.5H390L330 128.5V401.5L221.5 463Z" stroke="white"/>
+        <path d="M275.5 302L131 219V114.5L222 63L313 115.5V261L250.5 225H275.5V135L222 104.5L168 135.5V198.5L313 283V387.5L221 440L131 387V240L192 275H168V366.5L221 397.5L275.5 365V302Z" stroke="white"/>
+        </svg>
+        
+</body>
+
+<script>
+    anime({
+  targets: '#svg_id path',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: 'easeInOutSine',
+  duration: 3000,
+  delay: function(el, i) { return i * 1500 },
+  direction: 'alternate',
+  loop: true,
+  endDelay: 1000,
+  
+  translateY: anime.stagger(10, {grid: [1, 5], from: 'center', axis: 'y'}),
+//   delay: anime.stagger(200, {grid: [4, 5], from: 'center'}),
+
+  loopComplete: function() {
+    document.getElementById('svg_id').style="transition: fill .4s smooth;fill: white;";
+    // console.log("Yes");
+},
+
+});
+</script>
+</html>
