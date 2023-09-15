@@ -1,7 +1,7 @@
 {
   "name": "varshil_portfolio",
   "version": "0.1.0",
-  "homepage": "https://varshil1.github.io/portflio",
+  "homepage": "https://varshil1.github.io/portfolio/",
   "private": true,
   "dependencies": {
     "@alan-ai/alan-sdk-web": "^1.8.53",
