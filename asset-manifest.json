@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/https//varshil1.github.io/portflio/static/css/main.d2d06c72.css",
-    "main.js": "/https//varshil1.github.io/portflio/static/js/main.048d15f3.js",
-    "static/media/fontawesome-webfont.svg?v=4.7.0": "/https//varshil1.github.io/portflio/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
-    "static/media/fontawesome-webfont.eot": "/https//varshil1.github.io/portflio/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
-    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/https//varshil1.github.io/portflio/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
-    "static/media/brush-stroke.png": "/https//varshil1.github.io/portflio/static/media/brush-stroke.cb968cdf83058d38ce8f.png",
-    "static/media/fontawesome-webfont.woff?v=4.7.0": "/https//varshil1.github.io/portflio/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
-    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/https//varshil1.github.io/portflio/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
-    "index.html": "/https//varshil1.github.io/portflio/index.html",
-    "static/media/school.svg": "/https//varshil1.github.io/portflio/static/media/school.a41655f6d5350015803153c7410cef6a.svg",
-    "static/media/work.svg": "/https//varshil1.github.io/portflio/static/media/work.3710b62484ed638074240e99317c6c60.svg",
-    "main.d2d06c72.css.map": "/https//varshil1.github.io/portflio/static/css/main.d2d06c72.css.map",
-    "main.048d15f3.js.map": "/https//varshil1.github.io/portflio/static/js/main.048d15f3.js.map"
+    "main.css": "/portflio/static/css/main.83bd92c6.css",
+    "main.js": "/portflio/static/js/main.2621e730.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/portflio/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/portflio/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/portflio/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/brush-stroke.png": "/portflio/static/media/brush-stroke.cb968cdf83058d38ce8f.png",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/portflio/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/portflio/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/school.svg": "/portflio/static/media/school.a41655f6d5350015803153c7410cef6a.svg",
+    "index.html": "/portflio/index.html",
+    "static/media/work.svg": "/portflio/static/media/work.3710b62484ed638074240e99317c6c60.svg",
+    "main.83bd92c6.css.map": "/portflio/static/css/main.83bd92c6.css.map",
+    "main.2621e730.js.map": "/portflio/static/js/main.2621e730.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2d06c72.css",
-    "static/js/main.048d15f3.js"
+    "static/css/main.83bd92c6.css",
+    "static/js/main.2621e730.js"
   ]
 }
