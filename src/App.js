@@ -18,7 +18,8 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link
+  Link,
+  Switch
 } from "react-router-dom";
 
 // import { Routes ,Route } from 'react-router-dom';
@@ -47,32 +48,38 @@ function App() {
   
   // const [menuOpen,setMenuOpen]= useState(false)
   return (
+    // ***********************************************************
+
+    // Main code
     
+    // ***********************************************************
      <div className="app">
       <Routes>
         <Route path="/" element={<First />} />
-        <Route path="/intro" element={<Second />}>
+        <Route path="/intro" element={<Second />}/>
+        {/* 
         </Route>
-        {/* <Route path="/portfolio" element={<Second />}>
+        <Route path="/portfolio" element={<Second />}>
         </Route> */}
       </Routes>
+      </div>
+
 
             
       
             
-       {/* <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-       <div className="sections">
+      //  {/* <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      //  <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      //  <div className="sections">
         
-         <Intro/>
-         <Portfolio/>
-         <Education/>
-         <Works/>
-         <Testimonials/>
-         <Contact/>
+      //    <Intro/>
+      //    <Portfolio/>
+      //    <Education/>
+      //    <Works/>
+      //    <Testimonials/>
+      //    <Contact/>
 
-       </div>  */}
-       </div>
+      //  </div>  */}
 
   );
 }
