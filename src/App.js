@@ -50,11 +50,11 @@ function App() {
     
      <div className="app">
       <Routes>
-        {/* <Route path="/portfolio" element={<First />} />
+        <Route path="/" element={<First />} />
         <Route path="/intro" element={<Second />}>
-        </Route> */}
-        <Route path="/portfolio" element={<Second />}>
         </Route>
+        {/* <Route path="/portfolio" element={<Second />}>
+        </Route> */}
       </Routes>
 
             
