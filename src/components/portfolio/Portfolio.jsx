@@ -112,10 +112,10 @@ balls.forEach((el, i, ra) => {
             </ul>
             <div className="container">
                 {data.map((d) => (
-                <div className="item">
+                <a className="item" href={d.link} target="_blank">
                     <img src={d.img} alt="" />
                     <h3>{d.title}</h3>
-                </div>
+                </a>
                 ))}
             </div>
             
