@@ -76,7 +76,7 @@ typewriter
     </nav>
     <section class="section-1">
         <img src="assets/img/logo.png" class="logo" id="g-logo"/>
-        <form action="/intro" id="ok"><br/><br/>
+        <form action="/#/intro" id="ok"><br/><br/>
             <div class="s-box">
               <div id="temp1">
                 <img src="assets/img/search.svg" class="search-icon"/>
