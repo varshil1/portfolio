@@ -144,10 +144,7 @@ export default function Intro() {
     </div></span>
       
       </h1>
-                    <h1 class="desp"> My strong suits are Python development and machine (deep) learning in both industry and academia. Over the next
-few years, I intend to develop as a generalist software engineer. For that, I have learned a bit more of python , frontend
-technologies, data engineering, UI/UX designing, DevOps, software architecture, and even project management as
-well.</h1>
+                    <h1 class="desp">A data engineer passionate about AI and ML, with 2 years' experience in data modeling, ETL, and data warehousing. Proficient in SQL, NoSQL, and cloud solutions like AWS and GCP. I specialize in AI, including deep learning, NLP, and computer vision, and enjoy tackling real-world challenges. Collaborative and innovative, I optimize workflows and seek opportunities to apply AI in the fusion of UI/UX for diverse fields like healthcare, finance, and marketing. </h1>
                     </div>
                 </div>
                 <a class="down" href="#portfolio">
