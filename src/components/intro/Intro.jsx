@@ -8,16 +8,115 @@ import React, { useState } from 'react';
 export default function Intro() {
 
     const [isHovered, setIsHovered] = useState(false);
-
+    
     const handleMouseEnter = () => {
       setIsHovered(true);
     };
-  
+    
     const handleMouseLeave = () => {
       setIsHovered(false);
     };
-  
+    
     const textRef = useRef();
+    
+    
+    const name3DRef = useRef();
+    
+    // NEW ADDDDDDDDD
+    const leftRef = useRef();
+
+    const handleCodeMouseEnter = () => {
+      addCanvas();
+      toggleShapesVisibility(true);
+    };
+  
+    const handleCodeMouseLeave = () => {
+      removeCanvas();
+      toggleShapesVisibility(false);
+
+    };
+
+    const toggleShapesVisibility = (isVisible) => {
+      const shapes = document.querySelectorAll('#shape-1, #shape-2, #shape-3');
+      shapes.forEach(shape => {
+          if (isVisible) {
+              shape.classList.add('hidden-shapes');
+          } else {
+              shape.classList.remove('hidden-shapes');
+          }
+      });
+  };
+
+    const addCanvas = () => {
+      const canvas = document.createElement("canvas");
+      canvas.className = "canvas-bg";
+      const backWrapper = document.querySelector(".backWrapper"); // Reference to the backWrapper element
+      backWrapper.appendChild(canvas);
+      const context = canvas.getContext("2d");
+      context.globalCompositeOperation = 'lighter';
+      canvas.width = backWrapper.clientWidth;
+      canvas.height = backWrapper.clientHeight;
+    
+      // var textStrip = ['诶', '比', '西', '迪', '伊', '吉', '艾', '杰', '开', '哦', '屁', '提', '维'];
+      var textStrip = ['0', '1','2','3','4','5','6','7','8','9'];
+      var stripCount = 60, stripX = new Array(), stripY = new Array(), dY = new Array(), stripFontSize = new Array();
+      for (var i = 0; i < stripCount; i++) {
+        stripX[i] = Math.floor(Math.random() * canvas.width);
+        stripY[i] = -100;
+        dY[i] = Math.floor(Math.random() * 7) + 3;
+        stripFontSize[i] = Math.floor(Math.random() * 16) + 8;
+      }
+    
+      var theColors = ['#cefbe4', '#81ec72', '#5cd646', '#54d13c', '#4ccc32', '#43c728'];
+    
+      function drawStrip(x, y) {
+        for (var k = 0; k <= 20; k++) {
+          var randChar = textStrip[Math.floor(Math.random() * textStrip.length)];
+          if (context.fillText) {
+            context.fillStyle = theColors[Math.floor(k / 4)]; // Simplified color selection
+            context.fillText(randChar, x, y);
+          }
+          y -= stripFontSize[k];
+        }
+      }
+    
+      function draw() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.shadowOffsetX = context.shadowOffsetY = 0;
+        context.shadowBlur = 8;
+        context.shadowColor = '#94f475';
+    
+        for (var j = 0; j < stripCount; j++) {
+          context.font = stripFontSize[j] + 'px MatrixCode';
+          context.textBaseline = 'top';
+          context.textAlign = 'center';
+    
+          if (stripY[j] > canvas.height) {
+            stripX[j] = Math.floor(Math.random() * canvas.width);
+            stripY[j] = -100;
+            dY[j] = Math.floor(Math.random() * 7) + 3;
+            stripFontSize[j] = Math.floor(Math.random() * 16) + 8;
+          } 
+          drawStrip(stripX[j], stripY[j]);
+          stripY[j] += dY[j];
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    };
+    
+    const removeCanvas = () => {
+      const backWrapper = document.querySelector(".backWrapper"); // Reference to the backWrapper element
+      const canvas = backWrapper.querySelector(".canvas-bg");
+      if (canvas) {
+        backWrapper.removeChild(canvas);
+      }
+    };
+    
+    
+    // END ADDDDDDDDDDDD
+
+
 
     useEffect(() => {
         init(textRef.current, { showCursor: false,
@@ -35,6 +134,56 @@ export default function Intro() {
         
         }, 7000);
 
+
+        // NEWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+        // 3D text shadow effect
+        const handle3dMouseMove = (e) => {
+          const tspanElement = name3DRef.current;
+          if (tspanElement) {
+              const rect = tspanElement.getBoundingClientRect();
+              const rXP = (e.clientX - rect.left - tspanElement.clientWidth / 2);
+              const rYP = (e.clientY - rect.top - tspanElement.clientHeight / 2);
+              tspanElement.style.textShadow =
+                  `${rYP / 10}px ${rXP / 80}px rgba(227,6,19,.8), 
+                   ${rYP / 8}px ${rXP / 60}px rgba(255,237,0,1), 
+                   ${rXP / 70}px ${rYP / 12}px rgba(0,159,227,.7)`;
+          }
+      };
+
+      const handle3dMouseEnter = () => {
+          const wrapperElement = document.querySelector('.logo-name');
+          if (wrapperElement) {
+              wrapperElement.addEventListener("mousemove", handle3dMouseMove);
+          }
+      };
+
+      const handle3dMouseLeave = () => {
+          const wrapperElement = document.querySelector('.logo-name');
+          if (wrapperElement) {
+              wrapperElement.removeEventListener("mousemove", handle3dMouseMove);
+          }
+          if (name3DRef.current) {
+              name3DRef.current.style.textShadow = '';
+          }
+      };
+
+      // Attach event listeners to the .right .wrapper element
+      const wrapperElement = document.querySelector('.logo-name');
+      if (wrapperElement) {
+          wrapperElement.addEventListener("mouseenter", handle3dMouseEnter);
+          wrapperElement.addEventListener("mouseleave", handle3dMouseLeave);
+      }
+
+      // Cleanup event listeners on component unmount
+      return () => {
+          if (wrapperElement) {
+              wrapperElement.removeEventListener("mouseenter", handle3dMouseEnter);
+              wrapperElement.removeEventListener("mouseleave", handle3dMouseLeave);
+              wrapperElement.removeEventListener("mousemove", handle3dMouseMove);
+          }
+      };
+        // END NEWWWWWWWWWWWWWWWWWWWWWW
          
     }, []);
 
@@ -53,9 +202,9 @@ export default function Intro() {
    <li></li>
    
 </ul>
-            <div className="left">
+            <div className="left" >
             <div className="imgContainer" >
-            <div className="backWrapper">
+            <div className="backWrapper" ref={leftRef}>
                 
             <div
            id="shape-1"
@@ -104,7 +253,7 @@ export default function Intro() {
                     <h2>
                           Hey There, I'm
                     </h2>
-                    <div class="logo">
+                    <div className="logo-name">
   <svg class="text" viewBox="0 0 850 125">
     <text
           fill="none"
@@ -116,7 +265,8 @@ export default function Intro() {
           font-weight="600"
           letter-spacing="0.025em"
           class="is-active">
-      <tspan>Varshil Shah</tspan>
+      <tspan ref={name3DRef} className="name_3d" 
+>Varshil Shah</tspan>
     </text>
   </svg>
 </div>
@@ -133,7 +283,11 @@ export default function Intro() {
                     </button>
                         <span class="empty"> design</span>
                     ,
-                    <span class="empty"> code</span>, <a href="https://pin.it/4ZcBf6e" target="_blank"><span class="empty" id="paint"><span class="temp_paint"></span><span class="highlight"></span> paint</span></a> and <span class="aiAnimation" 
+                    
+
+                    <span class="code-hover" onMouseEnter={handleCodeMouseEnter} onMouseLeave={handleCodeMouseLeave}> code</span>, 
+                    
+                    <a href="https://pin.it/4ZcBf6e" target="_blank"><span class="empty" id="paint"><span class="temp_paint"></span><span class="highlight"></span> paint</span></a> and <span class="aiAnimation" 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave} ><span class="empty">deploy AI</span><div className={`loader ${isHovered ? 'hovered' : ''}`}>
       <div className="line"></div>

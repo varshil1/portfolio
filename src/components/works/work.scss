@@ -5,6 +5,7 @@ $size: 102px;
 
 .work{
     background-color: crimson;
+    background-image: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,8 +100,8 @@ $size: 102px;
             margin: 15px 0;
         }
         
-                .left{
-                    flex:11;
+                .right{
+                    flex:20;
                     height: 95%;
                     display: flex;
                     align-items: center;
@@ -213,7 +214,7 @@ $size: 102px;
             
                     flex:20;
                 }
-                .right{
+                .left{
                     flex:8;
                     height: 100%;
                     display: flex;
@@ -223,7 +224,7 @@ $size: 102px;
 
                     img{
                         width: 400px;
-                        transform: rotate(-10deg);
+                        // transform: rotate(-10deg);
                     }
                 }
             }

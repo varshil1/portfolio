@@ -4,6 +4,15 @@ export default function Testimonials() {
   const data = [
     {
       id: 1,
+      name: "Snowflake Data Warehousing",
+      title: "By Snowflake",
+      img: "assets/snowflake_logo.png",
+      icon: "assets/snowflake_logo_big.png",
+      desc: "Data warehousing, Data Modeling, Snowflake Databases, SQL",
+      cert_auth:"https://achieve.snowflake.com/0242850b-d0ba-445f-b154-ff53d37c523c",
+      },
+    {
+      id: 2,
       name: "Spark AR developer",
       title: "By Facebook",
       img:
@@ -11,9 +20,10 @@ export default function Testimonials() {
       icon: "assets/facebook.png",
       desc: "AR Content Creation, 3D Modeling, Interactive AR Effects, AR Platform Knowledge",
       cert_auth:"https://files.sv.co/soi/0820/completion/Varshil_ChetanKumar_Shah-6d32de5.pdf",
+      featured2: true,
       },
     {
-      id: 2,
+      id: 3,
       name: "Machine Learning with python",
       title: "By IBM",
       img:
@@ -25,7 +35,7 @@ export default function Testimonials() {
         featured: true,
     },
     {
-      id: 3,
+      id: 4,
       name: "Deep Learning Specialization",
       title: "DeepLearning.ai , Coursera",
       img:
@@ -34,10 +44,10 @@ export default function Testimonials() {
       desc:
         "Neural Networks, Deep Learning Frameworks, Computer Vision, Natural Language Processing (NLP)",
         cert_auth:"https://www.coursera.org/account/accomplishments/certificate/HDTHG9DE6AP3",
-        featured: true,
+        featured2: true,
       },
     {
-      id: 4,
+      id: 5,
       name: "Become A Data Analyst Specialization",
       title: "Linkedin Learning",
       img:
@@ -53,7 +63,7 @@ export default function Testimonials() {
       <h1>Certifications</h1>
       <div className="container">
         {data.map((d) => (
-          <div className={d.featured ? "card featured" : "card"}>
+          <div className={d.featured ? "card featured" : (d.featured2 ? "card featured2" : "card")}>
             <div className="top">
               <img src="assets/right-arrow.png" className="left" alt="" />
               <img
@@ -70,7 +80,7 @@ export default function Testimonials() {
               <h3>{d.name}</h3>
               <h4>{d.title}</h4>
             </div>
-            <a target="_blank" href={d.cert_auth} >Certificate</a>
+            <a target="_blank" href={d.cert_auth} className="certificate-btn">Certificate</a>
           </div>
         ))}
       </div>

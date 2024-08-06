@@ -10,25 +10,59 @@ import * as THREE from 'three';
 
 export default function Contact() {
 
-  const [input,setInput] = useState({
-    email: '',
-    name: '',
-    message:''
-  })
+  // const [input,setInput] = useState({
+  //   name: '',
+  //   message:''
+  // })
 
-  function handleChange(event){
-    const {name , value} = event.target;
+  // function handleChange(event){
+  //   const {name , value} = event.target;
 
-    setInput(prevInput => {
-      return{
-        ...prevInput,
-        [name]:value
-      }
-    })
-  }
-   
+  //   setInput(prevInput => {
+  //     return{
+  //       ...prevInput,
+  //       [name]:value
+  //     }
+  //   })
+  // }
+  
+  
+
+
   function handleClick(event){
     event.preventDefault();
+
+    const nameInput = document.getElementById('name_contactform');
+    const messageInput = document.querySelector('textarea[name="message"]');
+    const name = nameInput.value;
+    const message = messageInput.value;
+    const errorMessage = document.getElementById('error-message');
+
+    if (!name || !message) {
+        errorMessage.textContent = 'Both fields are required.';
+        // Hide the error message after 5 seconds
+        setTimeout(() => {
+          errorMessage.textContent = '';
+      }, 5000);
+        return;
+    } else {
+        errorMessage.textContent = ''; // Clear error message
+    }
+
+    const mailtoLink = `mailto:varshilshah0203@gmail.com?subject=${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+
+    window.open(mailtoLink, '_blank');
+
+    // Clear the form fields
+    nameInput.value = '';
+    messageInput.value = '';
+
+    errorMessage.textContent = 'Message sent.';
+        // Hide the error message after 5 seconds
+        setTimeout(() => {
+          errorMessage.textContent = '';
+      }, 5000);
+
     // console.log(input);
     // const NewContact ={
     //   email: input.email,
@@ -909,32 +943,22 @@ function animation() {
            </div>
            <div className="right">
                <h2>Contact</h2>
-               {/* <form method="post" onSubmit={handleSubmit}>
-               <input onChange={handleChange} type="email" name="email" value={input.email} placeholder="Email"/>
-               <input onChange={handleChange} type="text" name="name" value={input.name} placeholder="Name"/>
-                   <textarea onChange={handleChange} name="message" value={input.message} placeholder="Message"></textarea>
-                   <button type="submit" onClick={handleClick}>Send</button>
-                    {messages && 
-                    <span> Thanks for the message</span>}
-               </form> */}
+               
 
 
 
 <div class="contactform">
                 <form method="post" onSubmit={handleSubmit}>
                     <h2>Send Message</h2>
+                    
                     <div class="inputbox">
-                        <input type="email" onChange={handleChange} name="email" value={input.email} required="required"/>
-                        <span>Email</span>
-                    </div>
-                    <div class="inputbox">
-                        <input type="text" id="name_contactform" onChange={handleChange} name="name" value={input.name} required="required"/>
+                        <input type="text" id="name_contactform"  name="name" required="required"/>
                         <span>Name</span>
                     </div>
                     
                     
                     <div class="inputbox">
-                        <textarea onChange={handleChange} name="message" value={input.message} required="required"></textarea>
+                        <textarea  name="message"  required="required"></textarea>
                         <span>Additional Message....</span>
                     </div>
 
@@ -942,6 +966,8 @@ function animation() {
                     <div class="inputbox">
                         <input type="submit" value="Send"  onClick={handleClick}/>
                     </div>
+
+        <div id="error-message" className="error-message"></div>
                 </form>
             </div>
                </div> 
