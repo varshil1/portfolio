@@ -22,31 +22,8 @@ import {
   Switch
 } from "react-router-dom";
 
-// import { Routes ,Route } from 'react-router-dom';
-
-
-// import alanBtn from '@alan-ai/alan-sdk-web';
-// const alanKey='d2e894810ff4a40160dc9bd9beb760c62e956eca572e1d8b807a3e2338fdd0dc/stage';
-
 function App() {
 
-
-  
-  // useEffect(() => {
-
-    
-  //   alanBtn({
-  //     key : alanKey,
-  //     onCommand: ({ command,articles }) =>{
-  //       if(command === 'Work'){
-  //         var elmntToView = document.getElementById("works");
-  //         elmntToView.scrollIntoView(); 
-  //       }
-  //     }
-  //   })
-  // },[])
-  
-  // const [menuOpen,setMenuOpen]= useState(false)
   return (
     // ***********************************************************
 
@@ -57,29 +34,8 @@ function App() {
       <Routes>
         <Route path="/" element={<First />} />
         <Route path="/intro" element={<Second />}/>
-        {/* 
-        </Route>
-        <Route path="/portfolio" element={<Second />}>
-        </Route> */}
       </Routes>
       </div>
-
-
-            
-      
-            
-      //  {/* <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-      //  <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-      //  <div className="sections">
-        
-      //    <Intro/>
-      //    <Portfolio/>
-      //    <Education/>
-      //    <Works/>
-      //    <Testimonials/>
-      //    <Contact/>
-
-      //  </div>  */}
 
   );
 }
@@ -131,20 +87,7 @@ useEffect(() => {
     // Toggle loading state
     setLoading((loading) => !loading);
 
-    // alanBtn({
-    //   key : alanKey,
-    //   onCommand: ({ command,name }) =>{
-    //     if(command === 'Work'){
-    //       var elmntToView = document.getElementById("works");
-    //       elmntToView.scrollIntoView(); 
-    //     }
-    //     if(command === 'add_name'){
-    //       var elmntToView = document.getElementsByClassName("contactform").getElementById("name_contactform");
-    //       elmntToView.val("Yesss"); 
-    //       console.log(name);
-    //     }
-    //   }
-    // })
+    
   };
     
   loadData();

@@ -80,7 +80,7 @@ typewriter
             <div class="s-box">
               <div id="temp1">
                 <img src="assets/img/search.svg" class="search-icon"/>
-                <input type="text" placeholder="What are you looking for ?" class="s-input" id="text_demo"/>
+                <textarea type="text" placeholder="What are you looking for ?" class="s-input" id="text_demo"/>
                 <img src="assets/img/vs.png" class="vs-icon"></img>
                 </div>
                 <div id="temp2">

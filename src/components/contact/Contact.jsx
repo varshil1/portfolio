@@ -3,35 +3,7 @@ import './contact.scss'
 import {gsap,Elastic,Bounce,SteppedEase} from "gsap";
 import * as THREE from 'three';
 
-// import MatterComponent from './MatterComponent'; // Adjust the path as necessary
-
-
-// import Elastic from "gsap/Elastic";
-// import Bounce from "gsap";
-// import gsap from "gsap";
-// import gsap from "gsap";
-// import axios from 'axios';
-
 export default function Contact() {
-
-  // const [input,setInput] = useState({
-  //   name: '',
-  //   message:''
-  // })
-
-  // function handleChange(event){
-  //   const {name , value} = event.target;
-
-  //   setInput(prevInput => {
-  //     return{
-  //       ...prevInput,
-  //       [name]:value
-  //     }
-  //   })
-  // }
-  
-  
-
 
   function handleClick(event){
     event.preventDefault();
@@ -67,13 +39,6 @@ export default function Contact() {
           errorMessage.textContent = '';
       }, 5000);
 
-    // console.log(input);
-    // const NewContact ={
-    //   email: input.email,
-    //   name: input.name,
-    //   message:input.message
-    // }
-    // axios.post('http://localhost:3001/create',NewContact)
   }
 
     const [messages,setMessage]= useState(false);

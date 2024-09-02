@@ -1,3 +1,5 @@
+@import "../../global.scss";
+
 .bdy{
 	padding: 0;
 	margin:0;
@@ -56,20 +58,29 @@ nav button {
 
 	
 }
+.section-1 form{
+	width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .section-1 .logo {
 	display: block;
 	margin: 0px auto;
-	margin-top: 107px;
+	margin-top: 10%;
 }
 .s-box {
-	width: 580px;
+	// width: 580px;
+	width: 95%;
 	margin: 0px auto;
 	position: relative;
-	margin-top: -8px;
+	// margin-top: -8px;
 	text-align: center;
 	overflow: hidden;
 }
 .s-box .s-input {
+	height: 22px;
+    max-height: 44px;
 	display: block;
 	border: 1px solid #ddd;
 	color: rgba(0,0,0, 0.87);
@@ -80,6 +91,9 @@ nav button {
 	width: 100%;
 	transition: box-shadow 100ms;
 	outline: none;
+	overflow: hidden; /* Hide overflow */
+    resize: vertical; /* Allow vertical resizing */
+
 }
 .s-box  .s-input:hover {
 	border: 1px solid #fff;
@@ -93,16 +107,17 @@ nav button {
 }
 .s-box .search-icon {
 	width: 20px;
-	opacity: .4;
-	position: absolute;
-	top: 13px;
-	left: 14px;
+    opacity: 0.4;
+    position: absolute;
+    top: 13%;
+    left: 5%;
 }
 .s-box .vs-icon {
 	width: 14px;
-	position: absolute;
-	top: 13px;
-	right: 24px;
+    position: absolute;
+    /* top: 13px; */
+    top: 13%;
+    right: 5%;
 }
 .s-btn {
 	border: 1px solid transparent;
@@ -164,4 +179,140 @@ footer a:hover {
 }
 .link-2 {
 	padding-right: 18.7px;
+}
+
+
+@include mobile {
+	.section-1 .logo {
+		margin-top: 25%;
+	}
+	.s-box {
+		width: 95%;
+	}	
+	.s-box .s-input {
+		width:  85%;
+		overflow: hidden;
+	}
+}
+
+@include tablet {
+	.section-1 .logo {
+		margin-top: 20%;
+	}
+
+	.s-box {
+		width: 95%;
+	}	
+	.s-box .s-input {
+		width:  90%;
+		font-size: 18px;
+		overflow: hidden;
+	}
+	.s-box .search-icon {
+		left: 3%;
+		width: 24px;
+	}
+	.s-box .vs-icon {
+		right: 5%;
+		width: 14px;
+	}
+}
+
+@include desktop {
+	.s-box {
+		width: 65%;
+	}	
+	.s-box .s-input {
+		width:  90%;
+		font-size: 18px;
+		overflow: hidden;
+	}
+	.s-box .search-icon {
+		left: 3%;
+		width: 22px;
+	}
+}
+
+@include laptopL {
+	.section-1 .logo {
+		width: 25%;
+		margin-top: 5%;
+	}
+	.s-box {
+		width: 60%;
+	}	
+	.s-box .s-input {
+		height: 32px;
+    max-height: 44px;
+	font-size: 22px;
+	padding-left: 50px;
+	}
+	.s-box .vs-icon {
+		width: 20px;
+		top: 12%;
+		right: 5%;
+	}
+	.s-box .search-icon {
+		width: 24px;
+		top: 13%;
+		left: 2%;
+	}
+	.s-btn {
+		font-size: 18px;
+	}
+	.lang {
+		font-size: 15px;
+	}
+}
+
+@include fourK {
+	nav a {
+		font-size: 32px;
+		padding: 15px 18px;
+	}
+	nav img {
+		width: 48px;
+		padding: 12px;
+		margin: auto 12px;
+	}
+	nav button{
+		
+		font-size: 32px;
+		padding: 12px 18px;
+		border-radius: 8px;
+		margin-left: 12px;
+	}
+	.section-1 .logo {
+        width: 25%;
+        margin-top: 7%;
+    }
+
+	.s-box {
+		width: 60%;
+	}	
+	.s-box .s-input {
+        height: 48px;
+        max-height: 44px;
+        font-size: 36px;
+        padding-left: 70px;
+    }
+	.s-box .vs-icon {
+        width: 28px;
+        top: 10%;
+        right: 5%;
+    }
+	.s-box .search-icon {
+        width: 44px;
+        top: 11%;
+        left: 1%;
+    }
+	.s-btn {
+		padding: 18px 24px;
+		margin-right: 24px;
+	    margin-top: 44px;
+		font-size: 32px;
+	}
+	.lang {
+		font-size: 30px;
+	}
 }

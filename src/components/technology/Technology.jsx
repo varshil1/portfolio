@@ -35,7 +35,7 @@ export default function Intro() {
     useEffect(() => {
         console.log('Loading TagCanvas...');
         const TagCanvas = window.TagCanvas;
-        console.log('TagCanvas:', TagCanvas); // Add this line
+        // console.log('TagCanvas:', TagCanvas); // Add this line
         if (!TagCanvas) {
             console.log('TagCanvas is not loaded.');
             return;

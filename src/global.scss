@@ -2,8 +2,51 @@ $mainColor: #15023a;
 
 $width:768px;
 
-@mixin mobile{
-    @media (max-width: #{$width}){
-        @content
+// Breakpoint Variables
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$laptopL: 1440px;
+$fourK: 2560px;
+
+// Mixin for mobile
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+// Mixin for tablet
+@mixin tablet {
+    @media (min-width: #{$mobile + 1}) and (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+// Mixin for desktop
+@mixin desktop {
+    @media (min-width: #{$tablet + 1}) and (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+// Mixin for laptop large screens
+@mixin laptopL {
+    @media (min-width: #{$desktop + 1}) and (max-width: #{$laptopL}) {
+        @content;
+    }
+}
+
+// Mixin for 4K screens
+@mixin fourK {
+    @media (min-width: #{$laptopL + 1}) and (max-width: #{$fourK}) {
+        @content;
+    }
+}
+
+// Mixin for screens larger than 4K
+@mixin beyondFourK {
+    @media (min-width: #{$fourK + 1}) {
+        @content;
     }
 }
