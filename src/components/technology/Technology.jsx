@@ -1,40 +1,47 @@
 import "./technology.scss";
 import React, { useEffect, useRef } from 'react'; 
-import AOS from 'aos';
+// import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 
-const skills = [
-    { href: '#git_', title: 'Git' },
-    { href: '#json_', title: 'JSON' },
-    { href: '#solidity_', title: 'AWS' },
-    { href: '#html_', title: 'HTML' },
-    { href: '#html_', title: 'CSS' },
-    { href: '#react_', title: 'React' },
-    { href: '#python_', title: 'Python' },
-    { href: '#python_', title: 'Glue' },
-    { href: '#python_', title: 'Apache Spark' },
-    { href: '#python_', title: 'Airflow DAGs' },
-    { href: '#python_', title: 'PySpark' },
-    { href: '#python_', title: 'Three.js' },
-    { href: '#python_', title: 'SQL' },
-    { href: '#python_', title: 'Java' },
-    { href: '#python_', title: 'C/C++' },
-    { href: '#python_', title: 'TensorFlow' },
-    { href: '#python_', title: 'Selenium' },
-    { href: '#python_', title: 'Pandas' },
-    { href: '#python_', title: 'Numpy' },
-    { href: '#python_', title: 'OpenCV' },
-    { href: '#python_', title: 'Tableau' },
-    { href: '#python_', title: 'PowerBI' },
-    { href: '#python_', title: 'Docker' },
-    { href: '#python_', title: 'Kubernetes' },
-  ];
+// const skills = [
+//     { href: '#git_', title: 'Git' },
+//     { href: '#json_', title: 'JSON' },
+//     { href: '#solidity_', title: 'AWS' },
+//     { href: '#html_', title: 'HTML' },
+//     { href: '#html_', title: 'CSS' },
+//     { href: '#react_', title: 'React' },
+//     { href: '#python_', title: 'Python' },
+//     { href: '#python_', title: 'Glue' },
+//     { href: '#python_', title: 'Apache Spark' },
+//     { href: '#python_', title: 'Airflow DAGs' },
+//     { href: '#python_', title: 'PySpark' },
+//     { href: '#python_', title: 'Three.js' },
+//     { href: '#python_', title: 'SQL' },
+//     { href: '#python_', title: 'Java' },
+//     { href: '#python_', title: 'C/C++' },
+//     { href: '#python_', title: 'TensorFlow' },
+//     { href: '#python_', title: 'Selenium' },
+//     { href: '#python_', title: 'Pandas' },
+//     { href: '#python_', title: 'Numpy' },
+//     { href: '#python_', title: 'OpenCV' },
+//     { href: '#python_', title: 'Tableau' },
+//     { href: '#python_', title: 'PowerBI' },
+//     { href: '#python_', title: 'Docker' },
+//     { href: '#python_', title: 'Kubernetes' },
+//   ];
 
 export default function Intro() {
     
     useEffect(() => {
         console.log('Loading TagCanvas...');
         const TagCanvas = window.TagCanvas;
+        console.log('TagCanvas:', TagCanvas); // Add this line
+        if (!TagCanvas) {
+            console.log('TagCanvas is not loaded.');
+            return;
+        }
+
+
         const tagCanvasOptions = {
           textColour: '#08FDD8',
           outlineThickness: 0.5,
@@ -64,13 +71,7 @@ export default function Intro() {
     return (
         <div class="bdy2" >
          
-{/*          
-   <div class="Heading">
-                <h1>
-                    Tech and Tools
-                </h1>
-                <h2>I've been recently working on </h2>
-            </div> */}
+
             <div className="techWrapper">
 
                 <div class="techLeftWrapper">
@@ -124,6 +125,10 @@ export default function Intro() {
                                     <li><a href="#">PowerBI</a></li>
                                     <li><a href="#">Docker</a></li>
                                     <li><a href="#">Kubernetes</a></li>
+                                    <li><a href="#">Databricks</a></li>
+                                    <li><a href="#">Snowflake</a></li>
+                                    <li><a href="#">OpenAI API</a></li>
+                                    <li><a href="#">Generative AI</a></li>
                                 </ul>
                                 </div>
                         </div>
@@ -137,5 +142,3 @@ export default function Intro() {
 </div>
     )
 }
-
-

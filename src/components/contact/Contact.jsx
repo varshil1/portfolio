@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import './contact.scss'
 import {gsap,Elastic,Bounce,SteppedEase} from "gsap";
 import * as THREE from 'three';
+
+// import MatterComponent from './MatterComponent'; // Adjust the path as necessary
+
+
 // import Elastic from "gsap/Elastic";
 // import Bounce from "gsap";
 // import gsap from "gsap";

@@ -51,9 +51,19 @@
 		justify-content: center;
 		font-size: 55px;
 		color: #fff;
-		background-image: linear-gradient(90deg, red, blue);
+		// background-image: linear-gradient(90deg, red, blue);
     background-clip: text;
-    color: transparent;
+    // color: transparent;
+
+	background-image: url('../../../public/assets/gif_1.gif');
+  	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	// text-transform: uppercase;
+	// font-size: 120px;
+	// margin: 10px 0;
+
 	}
 	h1::before{
 		content: "<h1>"; 

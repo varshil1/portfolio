@@ -16,6 +16,7 @@
     "gsap": "^3.12.2",
     "ityped": "^1.0.3",
     "jquery": "^3.7.1",
+    "matter-js": "^0.20.0",
     "react": "^18.2.0",
     "react-anime": "^4.1.1",
     "react-dom": "^18.2.0",
