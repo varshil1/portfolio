@@ -8,7 +8,6 @@ $tablet: 768px;
 $desktop: 1024px;
 $laptopL: 1440px;
 $fourK: 2560px;
-
 // Mixin for mobile
 @mixin mobile {
     @media (max-width: #{$mobile}) {
@@ -18,28 +17,28 @@ $fourK: 2560px;
 
 // Mixin for tablet
 @mixin tablet {
-    @media (min-width: #{$mobile + 1}) and (max-width: #{$tablet}) {
+    @media (min-width: #{$mobile + 1}) and (max-width: #{$tablet - 1}) {
         @content;
     }
 }
 
 // Mixin for desktop
 @mixin desktop {
-    @media (min-width: #{$tablet + 1}) and (max-width: #{$desktop}) {
+    @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1}) {
         @content;
     }
 }
 
 // Mixin for laptop large screens
 @mixin laptopL {
-    @media (min-width: #{$desktop + 1}) and (max-width: #{$laptopL}) {
+    @media (min-width: #{$desktop}) and (max-width: #{$laptopL - 1}) {
         @content;
     }
 }
 
 // Mixin for 4K screens
 @mixin fourK {
-    @media (min-width: #{$laptopL + 1}) and (max-width: #{$fourK}) {
+    @media (min-width: #{$laptopL}) and (max-width: #{$fourK - 1}) {
         @content;
     }
 }

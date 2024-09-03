@@ -46,7 +46,7 @@ typewriter
   .typeString('Inquisitive data engineer who knows what to google ')
   .pauseFor(100)
   .deleteAll()
-  .pauseFor(100)
+  .pauseFor(10000000)
   .callFunction(() =>{
     NavBar.style=" transform: translateY(-100px); transition: ease 2s;";
     temp.style=" transform: translateX(-1000px); transition: ease 2s;    overflow: hidden;";

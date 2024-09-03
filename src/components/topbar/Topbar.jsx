@@ -8,20 +8,7 @@ export default function Topbar({menuOpen,setMenuOpen}) {
                 <div className="left">
                     <a href="#intro"><div class="logo">
                     <img src="assets/logo.jpg" alt="" />
-  {/* <svg class="text" viewBox="0 0 850 125">
-    <text
-          fill="none"
-          stroke="#000"
-          transform="translate(3 102)"
-          stroke-width="3"
-          font-size="102"
-          font-family="Montserrat-Black, Montserrat"
-          font-weight="800"
-          letter-spacing="0.1em"
-          class="is-active">
-      <tspan>Varshil Shah</tspan>
-    </text>
-  </svg> */}
+  
 </div></a>
                     <div className="itemContainer">
                         <Person className="icon"/>
